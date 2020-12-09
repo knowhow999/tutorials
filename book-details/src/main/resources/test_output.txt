@@ -1,0 +1,136 @@
+postman
+
+POST : http://localhost:8080/graphql
+
+1)
+
+{
+    bookById(id: "book-1"){
+        id
+        name
+        pageCount
+        author {
+            firstName
+            lastName
+        }
+    }
+}
+
+1-1)
+
+{
+    "data": {
+        "bookById": {
+            "id": "book-1",
+            "name": "Harry Potter and the Philosopher's Stone",
+            "pageCount": 223,
+            "author": {
+                "firstName": "Joanne",
+                "lastName": "Rowling"
+            }
+        }
+    }
+}
+
+2)
+
+{
+    bookById(id: "book-1"){
+        id
+        name
+    }
+}
+
+2-1)
+
+{
+    "data": {
+        "bookById": {
+            "id": "book-1",
+            "name": "Harry Potter and the Philosopher's Stone"
+        }
+    }
+}
+
+3)
+{
+      bookById(id: "1"){
+          id
+          name
+      }
+  }
+
+
+{
+      bookById(id: 1){
+          id
+          name
+      }
+  }
+
+
+ 3-1)
+
+  {
+      "data": {
+          "bookById": {
+              "id": "1",
+              "name": "스프링부트 정석"
+          }
+      }
+  }
+
+
+  4)
+
+  {
+      bookById(id: 1){
+          id
+          name
+          author {
+              firstName
+              lastName
+          }
+      }
+  }
+
+
+
+  4-1)
+
+  {
+      "data": {
+          "bookById": {
+              "id": "1",
+              "name": "스프링부트 정석",
+              "author": {
+                  "firstName": "jinyong",
+                  "lastName": "kim"
+              }
+          }
+      }
+  }
+
+
+5)
+
+{
+    authorById(id: 2){
+        firstName
+        lastName
+    }
+}
+
+
+{
+    "data": {
+        "authorById": {
+            "firstName": "changsoon",
+            "lastName": "lee"
+        }
+    }
+}
+
+
+
+
